@@ -1,0 +1,69 @@
+.navbar {
+    height: 40px;
+}
+.navbar-brand {
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.jumbotron {
+    background-image: url("../images/nasa.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 10%;
+    height: 550px;
+    text-align: center;
+}
+
+.jumbotron-text {
+    margin-top: 80px;
+    size: 72px;
+    animation-name: zoom-in;
+    animation-duration: 3s;
+}
+
+.jumbotron-p {
+    margin-top: 10px;
+    animation-name: blink;
+    animation-duration: 3s;
+}
+
+#ufo-img {
+    height: 20px;
+    display: inline-block;
+}
+
+.table {
+    padding: 10px;
+}
+.card-body {
+    padding: 10px;
+}
+
+.card-header {
+    padding: 10px;
+}
+
+#filter-btn {
+    margin-top: 10px;
+}
+
+@keyframes zoom-in {
+    from {
+        opacity: 0;
+        font-size: 10px;
+    }
+    to {
+        opacity: 1;
+        font-size: 72px;
+    }
+}
+
+@keyframes blink {
+    0%   {color: white;}
+    20%  {color: red;}
+    40%  {color: white;}
+    60%  {color: red;}
+    80% {color: white;}
+    100% {color: red;}
+}
