@@ -39,26 +39,21 @@ filterBtn.on("click", function() {
     
     //Prevent the page from refreshing
     d3.event.preventDefault();
-
-    // select the form input element and get the input
-    var inputElement = d3.select('#datetime');
     
-    // Get the value property of the input element
-    var inputValue = inputElement.property('value');
+    // select form input element and get value property of the input element
+    var inputDatetime = d3.select('#datetime').property('value');
+
+    var inputCity = d3.select('#city').property('value');
+
+    var inputState = d3.select('#state').property('value');
+
+    // var inputShape = d3.select('.dropdown-item').property('value');
 
     // clear the table body 
     tbody.html("");
 
-    // filter the data by input date 
-    function filterByDate(dataSet) {
-        var inputValue = inputElement.property("value");
-        return dataSet.datetime === inputValue;
-    }
-
-    var filteredByDate = data.filter(filterByDate);
-    
-    filteredByDate.forEach(entry => {
-        // append one table row per each object
+    // build function to build new table with filtered results 
+    function filteredTable(entry) {
         var row = tbody.append("tr");
         
         // extract data from the object and assign to variables
@@ -78,8 +73,57 @@ filterBtn.on("click", function() {
         row.append("td").text(shape);
         row.append("td").text(durationMinutes);
         row.append("td").text(comments);
-    });
-    // console.log(filteredByDate);
+    };
+    
+    // do this if there is input only for date time
+    if (inputDatetime) {
+        function filterByDate(dataSet) {
+            return dataSet.datetime === inputDatetime;
+        }
 
+        var filteredByDate = data.filter(filterByDate);
+
+        filteredByDate.forEach(filteredTable);
+    }
+
+    // do this if there is input only for city
+    else if (inputCity) {
+        function filterByCity(dataSet) {
+            return dataSet.city === inputCity;
+        }
+
+        var filteredByCity = data.filter(filterByCity);
+
+        filteredByCity.forEach(filteredTable);
+    }
+
+    else if (inputState) {
+        function filterByState(dataSet) {
+            return dataSet.state === inputState;
+            // fix it so it'll work even if the state abbr are entered in caps
+        }
+
+        var filteredByState = data.filter(filterByState);
+
+        filteredByState.forEach(filteredTable);
+    }
+
+    // do this if there is input for city and date time only
+    // else if (inputCity && inputDatetime) {
+    //     var filter1 = data.filter(filterByDate);
+    //     var filter2 = filter1.filter(filterByCity);
+        
+    //     filter2.forEach(filteredResult);
+    // }
+
+    else {
+        console.log("code still under progress...")
+    }
+
+    // console.log(filteredByDate);
+    // console.log(inputCity);
+    // console.log(inputDatetime);
+    // console.log(inputShape);
+    // console.log(inputState);
 });
 

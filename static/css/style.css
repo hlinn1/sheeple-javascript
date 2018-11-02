@@ -33,8 +33,14 @@
     display: inline-block;
 }
 
-.table {
-    padding: 10px;
+#inputGroupSelect01 {
+    width: 145px;
+    height: 38px;
+    color: grey;
+}
+
+.dropdown-item {
+    color: darkslategrey;
 }
 .card-body {
     padding: 10px;
@@ -47,6 +53,23 @@
 #filter-btn {
     margin-top: 10px;
 }
+
+.table {
+    padding: 10px;
+}
+
+@media (max-width: 1200px) {
+    #inputGroupSelect01 {
+        width: 112px;
+    }
+}
+
+@media (max-width: 990px) {
+    #inputGroupSelect01 {
+        width: 700px;
+    }
+}
+
 
 @keyframes zoom-in {
     from {
