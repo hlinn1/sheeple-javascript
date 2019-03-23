@@ -1,11 +1,9 @@
 # Interactive Webpage
-<p>project description </p>
+## Project description
 
-looped through the dataset to build a dynamic table with js 
-used bootstrap grid and other components 
-used d3 for dom manipulation
-
-Data file: <link> 
++ Looped through the dataset to build a dynamic table with js 
++ Used bootstrap grid and other components 
++ Used d3 for dom manipulation
 
 ## Built with
 HTML
@@ -15,5 +13,5 @@ Bootstrap
 D3
 
 ## Author
-Htet Linn <githublink>
+[Htet Yi Linn](https://github.com/hlinn1)
 
